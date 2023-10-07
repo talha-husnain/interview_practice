@@ -19,8 +19,7 @@ class Solution(object):
                 # Keep checking next numbers in the sequence
                 while current_num + 1 in nums_set:
                     current_num += 1
-                    current_length += 1
-                
+                    current_length += 1   
                 # Update the longest sequence found
                 longest_sequence = max(longest_sequence, current_length)
 
