@@ -6,7 +6,6 @@ class Solution(object):
         """
         # Stack to store opening brackets
         stack = []
-
         # For each character in the string
         for char in s:
             # If it's an opening bracket, push onto the stack
@@ -25,6 +24,5 @@ class Solution(object):
                 if char == "]" and stack[-1] != "[":
                     return False
                 stack.pop()
-
         # After processing all characters, return True if stack is empty
         return len(stack) == 0
