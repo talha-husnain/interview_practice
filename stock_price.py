@@ -4,7 +4,6 @@ class Solution(object):
         :type prices: List[int]
         :rtype: int
         """
-        # If there's only one price, no profit can be made
         if not prices or len(prices) == 1:
             return 0
         
