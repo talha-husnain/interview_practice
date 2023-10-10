@@ -12,8 +12,6 @@ class Solution(object):
             # Avoid processing duplicates
             if i > 0 and nums[i] == nums[i - 1]:
                 continue
-            
-            # Two pointers approach
             left, right = i + 1, n - 1
             while left < right:
                 total = nums[i] + nums[left] + nums[right]
