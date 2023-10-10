@@ -10,8 +10,7 @@ class Solution(object):
         minPrice = prices[0]
                 # Initialize the maximum profit to 0
         maxProfit = 0
-        
-        # Loop through the prices starting from the second price
+                # Loop through the prices starting from the second price
         for price in prices[1:]:
             # If the current price is less than the minimum price so far, 
             # update the minimum price
@@ -21,5 +20,4 @@ class Solution(object):
                 # Calculate the profit if selling at the current price and 
                 # update maxProfit if it's greater than the previous maxProfit
                 maxProfit = max(maxProfit, price - minPrice)
-        
         return maxProfit
