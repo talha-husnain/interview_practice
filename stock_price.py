@@ -6,11 +6,9 @@ class Solution(object):
         """
         if not prices or len(prices) == 1:
             return 0
-        
-        # Initialize the minimum price with the first price
+                # Initialize the minimum price with the first price
         minPrice = prices[0]
-        
-        # Initialize the maximum profit to 0
+                # Initialize the maximum profit to 0
         maxProfit = 0
         
         # Loop through the prices starting from the second price
