@@ -12,11 +12,12 @@ class Solution(object):
                 frequency_dict[num] += 1
             else:
                 frequency_dict[num] = 1
-        
+
         # Sort the dictionary by values in descending order
-        sorted_dict = sorted(frequency_dict.items(), key=lambda x: x[1], reverse=True)
-        
+        sorted_dict = sorted(frequency_dict.items(),
+                             key=lambda x: x[1], reverse=True)
+
         # Get the top k elements from the sorted dictionary
         result = [key for key, _ in sorted_dict[:k]]
-        
+
         return result
