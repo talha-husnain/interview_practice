@@ -15,6 +15,7 @@ class Solution(object):
             max_count = max(max_count, right-left + 1)
 
         return max_count if s else 0
+
         # count = 0
         # max_num = 1
         # li = []
