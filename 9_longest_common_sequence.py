@@ -6,7 +6,7 @@ class Solution(object):
         """
         if not nums:
             return 0
-        
+
         nums_set = set(nums)
         longest_sequence = 0
 
@@ -15,16 +15,15 @@ class Solution(object):
             if num - 1 not in nums_set:
                 current_num = num
                 current_length = 1
-                
+
                 # Keep checking next numbers in the sequence
                 while current_num + 1 in nums_set:
                     current_num += 1
-                    current_length += 1   
+                    current_length += 1
                 # Update the longest sequence found
                 longest_sequence = max(longest_sequence, current_length)
 
         return longest_sequence
-
 # class Solution(object):
 #     def longestConsecutive(self, nums):
 #         """
@@ -40,5 +39,3 @@ class Solution(object):
 #             else:
 #                 leng = leng
 #         return leng
-
-        
