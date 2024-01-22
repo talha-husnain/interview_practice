@@ -92,10 +92,8 @@ def main():
     json_file_path = 'path_to_json_file.json'
     # Replace with the actual API endpoint
     api_url = 'https://jsonplaceholder.typicode.com/users'
-
     completed_tasks_by_user, _ = read_and_process_data(json_file_path)
     users_with_max_tasks = find_users_with_max_tasks(completed_tasks_by_user)
-
     post_users_data(api_url, users_with_max_tasks)
 
 
