@@ -53,3 +53,51 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+def read_and_process_data(file_path):
+    # Reading data from a JSON file
+    with open(file_path, 'r') as file:
+        todos_data = json.load(file)
+
+    # Analyzing the data to find users who completed the most tasks
+    completed_tasks_by_user = {}
+    for todo in todos_data:
+        if todo['completed']:
+            user_id = todo['userId']
+            completed_tasks_by_user[user_id] = completed_tasks_by_user.get(
+                user_id, 0) + 1
+
+    return completed_tasks_by_user, todos_data
+
+
+def find_users_with_max_tasks(completed_tasks_by_user):
+    # Finding the maximum number of completed tasks
+    max_completed_tasks = max(completed_tasks_by_user.values())
+
+    # Filtering users who have completed the maximum number of tasks
+    return [user for user, count in completed_tasks_by_user.items() if count == max_completed_tasks]
+
+
+def post_users_data(api_url, users_with_max_tasks):
+    # Posting data for users with max tasks to the API
+    for user_id in users_with_max_tasks:
+        response = requests.post(api_url, json={"userId": user_id})
+        print(
+            f"Posted data for user {user_id}: Response {response.status_code}")
+
+
+def main():
+    # Replace with the actual JSON file path
+    json_file_path = 'path_to_json_file.json'
+    # Replace with the actual API endpoint
+    api_url = 'https://jsonplaceholder.typicode.com/users'
+
+    completed_tasks_by_user, _ = read_and_process_data(json_file_path)
+    users_with_max_tasks = find_users_with_max_tasks(completed_tasks_by_user)
+
+    post_users_data(api_url, users_with_max_tasks)
+
+
+if __name__ == "__main__":
+    main()
