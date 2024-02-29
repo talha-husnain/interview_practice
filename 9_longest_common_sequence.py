@@ -6,7 +6,6 @@ class Solution(object):
         """
         if not nums:
             return 0
-
         nums_set = set(nums)
         longest_sequence = 0
 
